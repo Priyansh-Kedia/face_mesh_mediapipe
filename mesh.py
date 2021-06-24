@@ -123,7 +123,7 @@ with mp_face_mesh.FaceMesh(
     print(f"{file} ntimeeeeeeee ", datetime.now()-a)
     print("resss ", results.__dict__)
     # Print and draw face mesh landmarks on the image.
-    print("facesssssssss ", len(results.face_detections))
+    print("facesssssssss ", len(results.multi_face_landmarks))
 
     if not results.multi_face_landmarks:
       continue
@@ -131,10 +131,10 @@ with mp_face_mesh.FaceMesh(
     image_rows, image_cols, _ = annotated_image.shape #hwc
     i = 0
     box = []
-    for detection in results.face_detections:
-      # mp_drawing.draw_detection(annotated_image, detection)
-      boxxx = detection.location_data.relative_bounding_box
-      box = [boxxx.xmin, boxxx.ymin, boxxx.width, boxxx.height]
+    # for detection in results.multi_face_landmarks:
+    #   # mp_drawing.draw_detection(annotated_image, detection)
+    #   boxxx = detection.location_data.relative_bounding_box
+    #   box = [boxxx.xmin, boxxx.ymin, boxxx.width, boxxx.height]
     idx_to_coordinates = []
     for face_landmarks in results.multi_face_landmarks:
       for idx, landmark in enumerate(face_landmarks.landmark):
