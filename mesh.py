@@ -121,7 +121,7 @@ with mp_face_mesh.FaceMesh(
     a = datetime.now()
     results = face_mesh.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     print(f"{file} ntimeeeeeeee ", datetime.now()-a)
-    print("resss ", results.__dict__)
+    # print("resss ", results.__dict__)
     # Print and draw face mesh landmarks on the image.
     print("facesssssssss ", len(results.multi_face_landmarks))
 
@@ -145,7 +145,8 @@ with mp_face_mesh.FaceMesh(
       # print("aaaaaaaaaaaaa", idx_to_coordinates)
       # calculateAngle(box, idx_to_coordinates, [image_cols, image_rows])
 
-      ptsold = [idx_to_coordinates[10], idx_to_coordinates[33], idx_to_coordinates[152], idx_to_coordinates[263]]
+      # ptsold = [idx_to_coordinates[10], idx_to_coordinates[33], idx_to_coordinates[152], idx_to_coordinates[263]]
+      ptsold = [idx_to_coordinates[LEFT_EAR], idx_to_coordinates[NOSE], idx_to_coordinates[RIGHT_EAR], idx_to_coordinates[CHIN_END]]
       dd[file] = cal(ptsold)
       aaa = []
       for pt in ptsold:
