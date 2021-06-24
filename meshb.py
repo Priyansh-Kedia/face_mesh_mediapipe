@@ -10,7 +10,7 @@ mp_face_mesh = mp.solutions.face_mesh
 
 file_dir = "data"
 file_list = os.listdir(file_dir)
-file_list = ['1616835614626.JPEG']
+file_list = ['test.jpg']
 
 
 def rotationMatrixToEulerAngle(r):
