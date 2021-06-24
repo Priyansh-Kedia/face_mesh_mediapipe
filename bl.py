@@ -11,7 +11,7 @@ mp_drawing = mp.solutions.drawing_utils
 file_dir = "data"
 file_list = os.listdir(file_dir)
 # file_list = ['R4.jpg', 'R5.jpg', 'Rakesh_1.jpg', 'Rakesh_2.jpg', 'Rakesh_3.jpg']
-file_list = ['demo.jpg']
+file_list = ['test.jpg']
 
 print(file_list)
 printAllLandMark = True
@@ -41,8 +41,8 @@ def _normalized_to_pixel_coordinates(
 with mp_face_detection.FaceDetection(
     min_detection_confidence=0.5) as face_detection:
   for idx, file in enumerate(file_list):
-    fPath = os.path.join(file_dir, file)
-    image = cv2.imread(fPath)
+    # fPath = os.path.join(file_dir, file)
+    image = cv2.imread(file)
     results = face_detection.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
     print("result ", results.__dict__)
 
